@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hood" Class="HoodDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DENROGERSL\SQLEXPRESS;Initial Catalog=Hood;Integrated Security=True" SettingsObjectName="HoodCMS.Data.Properties.Settings" SettingsPropertyName="HoodConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Quotes" Member="Quotes">
+    <Type Name="Quote">
+      <Column Name="QuoteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuoteUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Quote" Member="Quote1" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="QuoteDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_Quote" Member="aspnet_User" ThisKey="QuoteUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhoneType" Member="PhoneTypes">
+    <Type Name="PhoneType">
+      <Column Name="PhonetypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhoneTypeName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="PhoneType_Phone" Member="Phones" ThisKey="PhonetypeId" OtherKey="PhoneTypeId" Type="Phone" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phone" Member="Phones">
+    <Type Name="Phone">
+      <Column Name="PhoneId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhoneTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Phone_EntityPhone" Member="EntityPhones" ThisKey="PhoneId" OtherKey="PhoneId" Type="EntityPhone" />
+      <Association Name="PhoneType_Phone" Member="PhoneType" ThisKey="PhoneTypeId" OtherKey="PhonetypeId" Type="PhoneType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Occasion" Member="Occasions">
+    <Type Name="Occasion">
+      <Column Name="OccasionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OccasionName" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="EntityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OccasionDescription" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="OccasionPostedByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="OccasionStartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OccasionEndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Entity_Occasion" Member="Entity" ThisKey="EntityId" OtherKey="EntityId" Type="Entity" IsForeignKey="true" />
+      <Association Name="aspnet_User_Occasion" Member="aspnet_User" ThisKey="OccasionPostedByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntityPhone" Member="EntityPhones">
+    <Type Name="EntityPhone">
+      <Column Name="EntityId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhoneId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Phone_EntityPhone" Member="Phone" ThisKey="PhoneId" OtherKey="PhoneId" Type="Phone" IsForeignKey="true" />
+      <Association Name="Entity_EntityPhone" Member="Entity" ThisKey="EntityId" OtherKey="EntityId" Type="Entity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntityCategory" Member="EntityCategories">
+    <Type Name="EntityCategory">
+      <Column Name="EntitryCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntityCategoryName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="EntityCategory_Entity" Member="Entities" ThisKey="EntitryCategoryId" OtherKey="EntitryCategoryId" Type="Entity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntityAddress" Member="EntityAddresses">
+    <Type Name="EntityAddress">
+      <Column Name="EntityId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Entity_EntityAddress" Member="Entity" ThisKey="EntityId" OtherKey="EntityId" Type="Entity" IsForeignKey="true" />
+      <Association Name="Address_EntityAddress" Member="Address" ThisKey="AddressId" OtherKey="AddressId" Type="Address" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entity" Member="Entities">
+    <Type Name="Entity">
+      <Column Name="EntityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntitryCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EntityName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="EntityDescription" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="Entity_Occasion" Member="Occasions" ThisKey="EntityId" OtherKey="EntityId" Type="Occasion" />
+      <Association Name="Entity_EntityPhone" Member="EntityPhones" ThisKey="EntityId" OtherKey="EntityId" Type="EntityPhone" />
+      <Association Name="Entity_EntityAddress" Member="EntityAddresses" ThisKey="EntityId" OtherKey="EntityId" Type="EntityAddress" />
+      <Association Name="EntityCategory_Entity" Member="EntityCategory" ThisKey="EntitryCategoryId" OtherKey="EntitryCategoryId" Type="EntityCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_Quote" Member="Quotes" ThisKey="UserId" OtherKey="QuoteUserId" Type="Quote" />
+      <Association Name="aspnet_User_Occasion" Member="Occasions" ThisKey="UserId" OtherKey="OccasionPostedByUserId" Type="Occasion" />
+      <Association Name="aspnet_User_Article" Member="Articles" ThisKey="UserId" OtherKey="ArticlePostedByUserId" Type="Article" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleCategory" Member="ArticleCategories">
+    <Type Name="ArticleCategory">
+      <Column Name="ArticleCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArticleCategoryLabel" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="ArticleCategory_Article" Member="Articles" ThisKey="ArticleCategoryId" OtherKey="ArticleCategoryId" Type="Article" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article" Member="Articles">
+    <Type Name="Article">
+      <Column Name="ArticleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArticleCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticlePostedByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleTitle" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleDescription" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleURL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ArticleDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_Article" Member="aspnet_User" ThisKey="ArticlePostedByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="ArticleCategory_Article" Member="ArticleCategory" ThisKey="ArticleCategoryId" OtherKey="ArticleCategoryId" Type="ArticleCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Association Name="Address_EntityAddress" Member="EntityAddresses" ThisKey="AddressId" OtherKey="AddressId" Type="EntityAddress" />
+    </Type>
+  </Table>
+</Database>

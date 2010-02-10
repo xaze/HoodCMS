@@ -1,0 +1,12 @@
+D:\SourceControl\HoodCMS\HoodCMS.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\HoodCMS.Web.dll
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\HoodCMS.Web.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\HoodCMS.Data.dll
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\HoodCMS.Data.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Web\obj\Debug\HoodCMS.Web.dll
+D:\SourceControl\HoodCMS\HoodCMS.Web\obj\Debug\HoodCMS.Web.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\Ninject.dll
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\Ninject.Web.Mvc.dll
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\Ninject.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\Ninject.Web.Mvc.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Web\bin\Ninject.Web.Mvc.xml

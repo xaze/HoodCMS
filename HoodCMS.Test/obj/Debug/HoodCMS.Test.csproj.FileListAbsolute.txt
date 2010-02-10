@@ -1,0 +1,5 @@
+D:\SourceControl\HoodCMS\HoodCMS.Test\bin\Debug\HoodCMS.Test.dll
+D:\SourceControl\HoodCMS\HoodCMS.Test\bin\Debug\HoodCMS.Test.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Test\obj\Debug\ResolveAssemblyReference.cache
+D:\SourceControl\HoodCMS\HoodCMS.Test\obj\Debug\HoodCMS.Test.dll
+D:\SourceControl\HoodCMS\HoodCMS.Test\obj\Debug\HoodCMS.Test.pdb

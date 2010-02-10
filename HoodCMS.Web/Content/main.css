@@ -1,0 +1,451 @@
+﻿
+*
+{
+	font-weight: 500;
+	color: #716658;
+	margin: 0;
+	padding: 0;
+}
+
+html, body
+{
+	background-color: #5D5346;
+	color: #000;
+	height: 100%;
+	font: .95em Gill Sans, Gill Sans MT, Century Gothic, Calibri, Arial; /*x-small Century Gothic, arial, helvetica, sans-serif;*/
+}
+
+p
+{
+	margin-left: 45px;
+	margin-right: 15px;
+}
+
+h2
+{
+	font-weight: lighter;	
+}
+
+h4
+{
+	font-weight: lighter;	
+}
+
+/*BEGIN BODY LAYOUT*/
+#container
+{
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 1000px;
+}
+
+#theSkinnyPieceAboveTheHeader
+{
+	background-color: #5D5346;
+	color: #FFF;
+	height: 22px;
+	text-align: right;
+	width: 100%;
+}
+
+#poweredByGoogle
+{
+	margin-left: 500px;
+	text-align: right;
+	width: 300px;	
+}
+
+#header
+{
+	background-color: #FFF;
+	background-image: url('images/mainLogo.jpg');
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	height: 220px;
+	width: 100%;	
+}
+
+#headerRightImageContainer
+{
+	background-image: url('images/metalFlows.jpg');
+	background-repeat: no-repeat;
+	margin-left: 270px;
+	width: 680px;
+	height: 220px;
+}
+
+#headerRightTopForText
+{
+	background-color: #B4A68A;	
+	color: #FFF;
+	height: 35px;
+	margin-top: -15x;
+	padding: 5px;
+	vertical-align: middle;
+	width: 672px;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.90;
+	-khtml-opacity: 0.90;
+	opacity: 0.90;
+	z-index: 500;
+}
+
+#wideMenuContainer
+{
+	background-color: #B4A68A;
+	border: solid 2px #9B8F77;
+	clear: both;
+	height: 40px;
+	text-align: center;
+	width: 100%;
+}
+
+#body
+{
+	background-color: #FFF;
+}
+
+#bodyLeft
+{
+	background-color: #FFF;
+	float: left;
+	padding-top: 5px;
+	height: 100%;
+	width: 	740px;
+}
+
+#bodyRight
+{
+	background-color: #FFF;
+	float: left;
+	height: 100%;
+	width: 	205px;
+}
+
+#footerIn
+{
+	background-color: #FFF;
+	clear: both;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;		
+	width: 95%;
+}
+
+#footerOut
+{
+	color: #FFF;
+	font-size: 80%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+}
+
+#bodyBecomeAMember
+{
+	background-color: Transparent;
+	height: 160px;
+	margin-top: -105px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 1000;
+}
+
+#bodyRightPoll
+{
+	width: 100%;
+}
+
+.contentWithBlueBorder
+{
+	border: solid 1px #3E8DCE;
+	padding: 2px;
+}
+
+#bodyRightAd
+{
+	margin-top: 12px;
+	height: 300px;
+	text-align: center;
+}
+
+.adContainer
+{
+	background-color: #D64637;	
+	color: #FFF;
+	height: 300px;
+	width: 250px;
+}
+
+.subContainerHeader
+{
+	background-color: #FFF;
+	height: 240px;
+	margin: auto;
+	width: 95%;	
+}
+
+.subContainerBody
+{
+	background-color: #FFF;
+	height: 100%;
+	margin: auto;
+	width: 95%;		
+}
+
+.whatsHappeningInSunnyside
+{
+	border-bottom: dashed 1px #DADADA;
+	padding-bottom: 5px;
+	margin: 5px;	
+	margin-left: 25px;
+}
+
+.upcomingEvents
+{
+	background-color: #F0801E;
+	color: #FFF;
+	margin-top: 40px;
+	margin-left: 25px;
+	padding: 5px;
+	width: 92%;
+}
+
+#whatAreOurResidentsSaying
+{
+		
+}
+
+/*END BODY LAYOUT*/
+
+/*BEGIN MENU*/
+.clear {clear:both}	
+/* remove the list style */
+#nav 
+{
+	font-size: 125%;
+	margin:0;
+	padding:0; 
+	list-style:none;
+}	
+	
+	/* make the LI display inline */
+	/* it's position relative so that position absolute */
+	/* can be used in submenu */
+	#nav li 
+	{
+		color: #FFF;
+		float:left;
+		font-weight: lighter; 
+		display:block; 
+		width:155px; 
+		position:relative;
+		z-index:500; 
+		margin: 0 0px;
+	}
+		
+	/* this is the parent menu */
+	#nav li a 
+	{
+		background-color: #B4A68A;
+		display:block; 
+		padding:8px 5px 0 5px; 
+		height:23px; 
+		text-decoration:none; 
+		color:#fff; 
+		text-align:center; 
+	}
+
+	#nav li a:hover {
+		color: #FECF1D;
+	}
+	
+	/* you can make a different style for default selected value */
+	#nav a.selected {
+		
+	}
+	
+		/* submenu, it's hidden by default */
+		#nav ul 
+		{
+			background-color: #B4A68A;
+			position:absolute; 
+			left:0; 
+			display:none; 
+			margin: 0 0 0 -1px; 
+			padding:0; 
+			list-style:none;
+		}
+		
+		#nav ul li 
+		{
+			background-color: #B4A68A;
+			border-bottom: solid 2px #9B8F77;
+			border-left: solid 2px #9B8F77;
+			border-right: solid 2px #9B8F77;
+			width:155px; 
+			float:left; 
+		}
+		
+		/* display block will make the link fill the whole area of LI */
+		#nav ul a 
+		{
+			font-size: 70%;
+			display:block;  
+			height:12px;
+			padding: 8px 5px; 
+			color:#FFF;
+		}
+		
+		#nav ul a:hover 
+		{
+			color: #FECF1D;
+			text-decoration: underline;	
+		}
+
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+	margin:0 0 0 -2px;
+}
+
+/*END MENU*/
+
+/*BEGIN INPUT CONTROLS*/
+select
+{
+	margin-left: 12px;
+}
+
+.formButtons
+{
+	margin-right: 15px;
+	padding: 6px;
+	text-align: center;	
+}
+
+/*END INPUT CONTROLS*/
+
+/*BEGIN RANDOM FONT STYLES*/
+.bigHeadline
+{
+	color: #3E8DCE;
+	font-size: 200%;
+	margin: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 2px;	
+	width: 730px;
+}
+
+.smallHeadlineWithBlueBackground
+{
+	 background-color: #3E8DCE;
+	 color: #FFF;
+	 font-size: 110%;
+	 margin-top: 15px;
+	 padding: 3px;
+}
+
+.textLittleBlue
+{
+	font-size: 90%;	
+}
+
+h2.Orange
+{
+	color: #F0801E;		
+}
+
+h2.White
+{
+	color: #FFF;		
+}
+
+h4.White
+{
+	color: #FFF;
+	position: relative;
+	top: 3px;
+}
+
+p.small
+{
+	font-size: 90%;	
+}
+
+/*END RANDOM FONT STYLES*/
+
+/*BEGIN CONTENT STYLES*/
+.headline
+{
+	border-bottom: dashed 1px #DADADA;
+	background-color: #FFF;
+	margin-top: 10px;
+	margin-left: 45px;
+	margin-right: auto;
+	padding-bottom: 10px;
+	width: 90%;	
+}
+
+.headline a:link{color: #3E8DCE; text-decoration: none;} 
+.headline a:visited{color: #3E8DCE; text-decoration: none;} 
+.headline a:hover{color: #FECF1D; text-decoration: underline;} 
+.headline a.active{color: #3E8DCE; text-decoration: none;}
+
+.headlineHeader
+{
+	float: left;
+	font-size: 135%;		
+}
+
+.headlineSubHeader
+{
+	clear: both;
+	font-size: 95%;	
+	padding-top: -10px;
+}
+
+.headlineContent
+{
+	color: #B3A78F;
+	font-size: 90%;
+	margin-top: 4px;
+}
+/*END CONTENT STYLES*/
+
+.content
+{
+	margin-top: 10px;
+	margin-left: 45px;
+	margin-right: auto;
+	padding-bottom: 10px;
+	width: 90%;	
+	margin-top: 4px;
+}
+
+a:link.Orange
+{
+    color: #F0801E;
+    text-decoration: none;
+}
+a:visited.Orange
+{
+    color: #F0801E;
+    text-decoration: none;
+}
+a:hover.Orange
+{
+    color: #F0801E;
+    text-decoration: underline;
+}
+a:active.Orange
+{
+    color: #F0801E;
+    text-decoration: none;
+}

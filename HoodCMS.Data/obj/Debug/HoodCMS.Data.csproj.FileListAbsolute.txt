@@ -1,0 +1,6 @@
+D:\SourceControl\HoodCMS\HoodCMS.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\SourceControl\HoodCMS\HoodCMS.Data\bin\Debug\HoodCMS.Data.dll.config
+D:\SourceControl\HoodCMS\HoodCMS.Data\bin\Debug\HoodCMS.Data.dll
+D:\SourceControl\HoodCMS\HoodCMS.Data\bin\Debug\HoodCMS.Data.pdb
+D:\SourceControl\HoodCMS\HoodCMS.Data\obj\Debug\HoodCMS.Data.dll
+D:\SourceControl\HoodCMS\HoodCMS.Data\obj\Debug\HoodCMS.Data.pdb
